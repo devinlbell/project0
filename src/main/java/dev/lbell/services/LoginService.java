@@ -69,9 +69,11 @@ public class LoginService {
 					return user;
 				} else {
 					BankUser user = uDao.addUser(name, email, false);
+					System.out.println("Thank you. We've created your account. Please remember these credentials to login later.");
+					return user;
 				}
 				// create account in database
-				System.out.println("Thank you. We've created your account. Please remember these credentials to login later.");
+				
 			} else {
 				System.out.println("please enter (y,n)");
 			}

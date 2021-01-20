@@ -74,7 +74,6 @@ public class UserDaoImpl implements UserDao{
 				interactionPStatement.executeQuery();
 				if(rs.next()) {
 					int id = rs.getInt(1);
-					System.out.println("The id is: " + id);
 					BankUser employeeAcct = new Employee(id, name, email);
 					employeeAcct.setEmployee(true);
 					return employeeAcct;
@@ -95,8 +94,8 @@ public class UserDaoImpl implements UserDao{
 			
 			try(Connection connection = ConnectionUtil.getConnection();
 					PreparedStatement pStatement = connection.prepareStatement(sql);
-					Statement idStatement = connection.createStatement();
 					Statement empIdStatement = connection.createStatement();
+					Statement idStatement = connection.createStatement();
 					PreparedStatement interactionPStatement = connection.prepareStatement(interactionSql)) {
 				ResultSet rs = empIdStatement.executeQuery(empIdSql);
 				int empId = 0;
@@ -105,7 +104,7 @@ public class UserDaoImpl implements UserDao{
 				interactionPStatement.executeQuery();
 				if(rs.next()) {
 					empId = rs.getInt(1);
-					System.out.println("The empid is: " + empId);
+					System.out.println("The id of your employee representative is: " + empId);
 					
 				} 
 				pStatement.setString(1, name);
@@ -118,13 +117,14 @@ public class UserDaoImpl implements UserDao{
 				interactionPStatement.executeQuery();
 				rs = idStatement.executeQuery(idSql);
 				log.info(idSql);
-				interactionPStatement.setString(1, idSql);
-				interactionPStatement.executeQuery();
+				
 				if(rs.next()) {
 					int id = rs.getInt(1);
-					System.out.println("The regular id is: " + id);
+					System.out.println("Your customer id is: " + id);
 					BankUser custAcct = new Customer(id, name, email, empId);
 					custAcct.setEmployee(false);
+					interactionPStatement.setString(1, idSql);
+					interactionPStatement.executeQuery();
 					return custAcct;
 				} 
 				

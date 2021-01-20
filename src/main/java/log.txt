@@ -131,3 +131,56 @@
 2021-01-19 23:37:51 INFO  AccountDaoImpl:155 method: viewTransactions - SELECT * FROM TRANSACTIONS
 2021-01-19 23:38:07 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
 2021-01-19 23:38:18 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (24)
+2021-01-19 23:47:54 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:47:55 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 23:48:34 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (24)
+2021-01-19 23:49:03 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (REJECTED,  23)
+2021-01-19 23:49:12 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  23)
+2021-01-19 23:49:19 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (REJECTED,  23)
+2021-01-19 23:49:25 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 23:49:31 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (22)
+2021-01-19 23:49:32 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (23)
+2021-01-19 23:49:33 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (24)
+2021-01-19 23:49:34 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (25)
+2021-01-19 23:49:56 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  23)
+2021-01-19 23:49:58 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (22)
+2021-01-19 23:49:59 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (23)
+2021-01-19 23:50:00 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (24)
+2021-01-19 23:50:01 INFO  AccountDaoImpl:179 method: getUnapprovedAccts - SELECT * FROM BANK_ACCOUNT WHERE STATUS != 'APPROVED' AND CUSTOMER_ID = ? -> (25)
+2021-01-19 23:50:11 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 23:50:21 INFO  AccountDaoImpl:155 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 23:50:38 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 23:50:44 INFO  AccountDaoImpl:155 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 23:51:15 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:58:25 WARN  LoginDriver:36 method: start - java.util.NoSuchElementException
+2021-01-20 06:20:28 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (fdsalkm,  dvmda-)
+2021-01-20 06:20:28 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-20 06:20:51 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:20:52 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (james,  peach@giant.com, 7)
+2021-01-20 06:20:52 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:21:31 WARN  AccountDaoImpl:66 method: applyBankAccount - java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (ADMIN.SYS_C003949) violated - parent key not found
+
+2021-01-20 06:24:14 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (james,  giant@peach.com)
+2021-01-20 06:24:14 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-20 06:25:26 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (james,  peach@giant.com)
+2021-01-20 06:25:29 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (42)
+2021-01-20 06:25:39 INFO  AccountDaoImpl:61 method: applyBankAccount - INSERT INTO BANK_ACCOUNT (CUSTOMER_ID, STATUS, BALANCE) VALUES (?, ?, ?) -> (42,  PENDING, 200.0)
+2021-01-20 06:31:53 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:31:53 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (monkey,  d@banana.com, 5)
+2021-01-20 06:31:53 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:32:10 WARN  AccountDaoImpl:66 method: applyBankAccount - java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (ADMIN.SYS_C003949) violated - parent key not found
+
+2021-01-20 06:34:36 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:34:36 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (plis,  account@help.com, 8)
+2021-01-20 06:34:37 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:34:45 WARN  AccountDaoImpl:67 method: applyBankAccount - java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (ADMIN.SYS_C003949) violated - parent key not found
+
+2021-01-20 06:39:42 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:39:43 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (help,  make@account.com, 4)
+2021-01-20 06:39:43 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:39:48 INFO  AccountDaoImpl:62 method: applyBankAccount - INSERT INTO BANK_ACCOUNT (CUSTOMER_ID, STATUS, BALANCE) VALUES (?, ?, ?) -> (45,  PENDING, 200.0)
+2021-01-20 06:40:03 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (45)
+2021-01-20 06:41:38 INFO  UserDaoImpl:69 method: addUser - INSERT INTO EMPLOYEE (NAME, EMAIL) VALUES (?, ?) -> (new,  kid@block.com)
+2021-01-20 06:41:38 INFO  UserDaoImpl:72 method: addUser - SELECT MAX(EMPLOYEE_ID) FROM EMPLOYEE
+2021-01-20 06:41:39 INFO  UserDaoImpl:185 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (9)
+2021-01-20 06:41:51 INFO  AccountDaoImpl:155 method: viewTransactions - SELECT * FROM TRANSACTIONS
