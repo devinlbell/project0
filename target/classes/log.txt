@@ -165,3 +165,22 @@
 2021-01-20 06:25:26 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (james,  peach@giant.com)
 2021-01-20 06:25:29 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (42)
 2021-01-20 06:25:39 INFO  AccountDaoImpl:61 method: applyBankAccount - INSERT INTO BANK_ACCOUNT (CUSTOMER_ID, STATUS, BALANCE) VALUES (?, ?, ?) -> (42,  PENDING, 200.0)
+2021-01-20 06:31:53 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:31:53 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (monkey,  d@banana.com, 5)
+2021-01-20 06:31:53 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:32:10 WARN  AccountDaoImpl:66 method: applyBankAccount - java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (ADMIN.SYS_C003949) violated - parent key not found
+
+2021-01-20 06:34:36 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:34:36 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (plis,  account@help.com, 8)
+2021-01-20 06:34:37 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:34:45 WARN  AccountDaoImpl:67 method: applyBankAccount - java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (ADMIN.SYS_C003949) violated - parent key not found
+
+2021-01-20 06:39:42 INFO  UserDaoImpl:103 method: addUser - SELECT EMPLOYEE_ID FROM (SELECT EMPLOYEE_ID FROM EMPLOYEE ORDER BY dbms_random.value) WHERE rownum = 1
+2021-01-20 06:39:43 INFO  UserDaoImpl:116 method: addUser - INSERT INTO CUSTOMERS (NAME, EMAIL, EMPLOYEE_ID)  VALUES (?, ?, ?) -> (help,  make@account.com, 4)
+2021-01-20 06:39:43 INFO  UserDaoImpl:120 method: addUser - SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS
+2021-01-20 06:39:48 INFO  AccountDaoImpl:62 method: applyBankAccount - INSERT INTO BANK_ACCOUNT (CUSTOMER_ID, STATUS, BALANCE) VALUES (?, ?, ?) -> (45,  PENDING, 200.0)
+2021-01-20 06:40:03 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (45)
+2021-01-20 06:41:38 INFO  UserDaoImpl:69 method: addUser - INSERT INTO EMPLOYEE (NAME, EMAIL) VALUES (?, ?) -> (new,  kid@block.com)
+2021-01-20 06:41:38 INFO  UserDaoImpl:72 method: addUser - SELECT MAX(EMPLOYEE_ID) FROM EMPLOYEE
+2021-01-20 06:41:39 INFO  UserDaoImpl:185 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (9)
+2021-01-20 06:41:51 INFO  AccountDaoImpl:155 method: viewTransactions - SELECT * FROM TRANSACTIONS
