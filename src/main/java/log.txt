@@ -1,0 +1,133 @@
+2021-01-19 08:02:04 INFO  AccountDaoImpl:36 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ?
+2021-01-19 08:02:15 INFO  AccountDaoImpl:96 method: makeTransaction - INSERT INTO TRANSACTIONS (ACCOUNT_ID, AMOUNT, STATUS) VALUES (?, ?, ?)
+2021-01-19 08:29:56 WARN  AccountDaoImpl:120 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 08:48:41 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 08:52:23 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 08:53:38 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 08:53:54 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 09:00:44 INFO  UserDaoImpl:130 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 09:00:46 INFO  UserDaoImpl:152 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 09:00:50 INFO  AccountDaoImpl:120 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 09:01:26 INFO  UserDaoImpl:32 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (adfsaf,  fdas)
+2021-01-19 09:01:26 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 09:01:44 INFO  UserDaoImpl:32 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 09:01:54 INFO  AccountDaoImpl:36 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 12:43:01 INFO  UserDaoImpl:144 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)
+2021-01-19 12:43:01 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) 
+2021-01-19 12:43:01 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) 
+2021-01-19 12:43:01 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) ) 
+2021-01-19 12:43:01 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) ) ) 
+2021-01-19 12:43:01 WARN  UserDaoImpl:196 method: insertTransaction - java.sql.SQLException: ORA-12899: value too large for column "ADMIN"."TRANSACTIONS"."INTERACTION" (actual: 301, maximum: 250)
+
+2021-01-19 12:43:01 WARN  UserDaoImpl:153 method: getEmployee - java.sql.SQLRecoverableException: Closed Connection: next
+2021-01-19 12:43:01 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 12:45:58 INFO  UserDaoImpl:144 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 12:45:58 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) 
+2021-01-19 12:45:58 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) ) 
+2021-01-19 12:45:58 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) ) ) 
+2021-01-19 12:45:58 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) ) ) ) 
+2021-01-19 12:45:58 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) ) ) ) ) 
+2021-01-19 12:45:58 WARN  UserDaoImpl:196 method: insertTransaction - java.sql.SQLException: ORA-12899: value too large for column "ADMIN"."TRANSACTIONS"."INTERACTION" (actual: 357, maximum: 350)
+
+2021-01-19 12:45:58 WARN  UserDaoImpl:153 method: getEmployee - java.sql.SQLRecoverableException: Closed Connection: next
+2021-01-19 12:45:58 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 12:46:41 INFO  UserDaoImpl:144 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)
+2021-01-19 12:46:41 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) 
+2021-01-19 12:46:41 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) 
+2021-01-19 12:46:42 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) ) 
+2021-01-19 12:46:42 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) ) ) 
+2021-01-19 12:46:42 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (jim,  slim@gmail.com)) ) ) ) ) 
+2021-01-19 12:46:42 WARN  UserDaoImpl:196 method: insertTransaction - java.sql.SQLException: ORA-12899: value too large for column "ADMIN"."TRANSACTIONS"."INTERACTION" (actual: 357, maximum: 350)
+
+2021-01-19 12:46:42 WARN  UserDaoImpl:153 method: getEmployee - java.sql.SQLRecoverableException: Closed Connection: next
+2021-01-19 12:46:42 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 12:48:05 INFO  UserDaoImpl:144 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 12:48:06 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) 
+2021-01-19 12:48:06 WARN  UserDaoImpl:153 method: getEmployee - java.sql.SQLRecoverableException: Closed Connection: next
+2021-01-19 12:48:06 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 12:50:05 INFO  UserDaoImpl:144 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 12:50:05 INFO  UserDaoImpl:193 method: insertTransaction - INSERT INTO TRANSACTIONS (INTERACTION) VALUES (?) -> (SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)) 
+2021-01-19 12:50:05 WARN  UserDaoImpl:153 method: getEmployee - java.sql.SQLRecoverableException: Closed Connection: next
+2021-01-19 12:50:05 WARN  LoginDriver:36 method: start - java.lang.NullPointerException: Cannot invoke "dev.lbell.models.BankUser.isEmployee()" because "user" is null
+2021-01-19 12:53:03 INFO  UserDaoImpl:144 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 12:53:04 INFO  UserDaoImpl:169 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 12:53:10 INFO  AccountDaoImpl:134 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 13:04:58 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 13:04:59 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 13:05:04 INFO  AccountDaoImpl:144 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 13:05:48 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 13:05:52 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 13:06:04 WARN  AccountDaoImpl:121 method: makeTransaction - java.sql.SQLSyntaxErrorException: ORA-00904: "STATUS": invalid identifier
+
+2021-01-19 13:09:27 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 13:09:47 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 13:10:05 INFO  AccountDaoImpl:117 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (109995.0,  1)
+2021-01-19 13:10:14 INFO  AccountDaoImpl:117 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (110020.0,  1)
+2021-01-19 13:10:33 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 13:10:34 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 13:10:37 INFO  AccountDaoImpl:144 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 21:10:58 WARN  UserDaoImpl:167 method: getEmployee - java.sql.SQLException: The url cannot be null
+2021-01-19 21:15:30 WARN  UserDaoImpl:167 method: getEmployee - java.sql.SQLException: The url cannot be null
+2021-01-19 21:25:58 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 21:26:58 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 21:28:53 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 21:28:54 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:29:07 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 22:29:08 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 22:29:09 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:34:57 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 22:34:58 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 22:35:00 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:35:01 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 22:35:12 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 22:35:13 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 22:35:14 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:35:15 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 22:35:25 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 22:35:26 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 22:35:27 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:35:28 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 22:37:29 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 22:37:30 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 22:37:31 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:37:32 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 22:39:45 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 22:39:46 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 22:39:47 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 22:39:49 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 23:05:24 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:05:25 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 23:05:26 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:05:27 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 23:06:00 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:06:01 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 23:06:02 INFO  AccountDaoImpl:131 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (2.0,  2)
+2021-01-19 23:06:03 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:06:04 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 23:06:24 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:06:25 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 23:06:26 INFO  AccountDaoImpl:131 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (48.0,  2)
+2021-01-19 23:06:28 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:06:29 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 23:07:49 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:07:50 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 23:07:51 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:07:52 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 23:26:29 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:26:30 INFO  AccountDaoImpl:83 method: addressAccount - UPDATE BANK_ACCOUNT SET STATUS = ? WHERE ACCOUNT_ID = ? -> (APPROVED,  1)
+2021-01-19 23:26:31 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:26:32 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (25)
+2021-01-19 23:26:58 INFO  UserDaoImpl:36 method: getCustomer - SELECT * FROM CUSTOMERS WHERE NAME = ? AND EMAIL = ? -> (MCTEST,  MCTEST@GMAIL.COM)
+2021-01-19 23:27:02 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 23:27:15 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 23:27:24 INFO  AccountDaoImpl:131 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (110043.0,  1)
+2021-01-19 23:27:47 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 23:28:13 INFO  AccountDaoImpl:131 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (110010.0,  1)
+2021-01-19 23:28:18 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 23:28:44 INFO  AccountDaoImpl:131 method: makeTransaction - UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE ACCOUNT_ID = ? -> (110008.0,  1)
+2021-01-19 23:28:49 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (1)
+2021-01-19 23:37:40 INFO  UserDaoImpl:157 method: getEmployee - SELECT * FROM EMPLOYEE WHERE NAME = ? AND EMAIL = ? -> (slim,  jim@gmail.com)
+2021-01-19 23:37:41 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 23:37:51 INFO  AccountDaoImpl:155 method: viewTransactions - SELECT * FROM TRANSACTIONS
+2021-01-19 23:38:07 INFO  UserDaoImpl:184 method: getCustomers - SELECT * FROM CUSTOMERS WHERE EMPLOYEE_ID = ? -> (2)
+2021-01-19 23:38:18 INFO  AccountDaoImpl:38 method: getCustomerAccounts - SELECT * FROM BANK_ACCOUNT WHERE CUSTOMER_ID = ? -> (24)

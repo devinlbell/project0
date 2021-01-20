@@ -9,8 +9,9 @@ public interface AccountDao {
 	public List<BankAccount> getCustomerAccounts(int customerId);
 	public boolean applyBankAccount(int customerId, double balance);
 	public boolean addressAccount(int accountId, String status);
-	public boolean makeTransaction(int accountId, double amount, double newBalance, String status);
+	public boolean makeTransaction(int accountId, double amount, double balance, boolean deposit);
 	public List<Transactions> viewTransactions();
 	public List<BankAccount> getUnapprovedAccts(int customerId, List<BankAccount> accts);
+	public void insertTransaction(String interaction);
 
 }

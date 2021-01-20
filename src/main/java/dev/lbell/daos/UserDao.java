@@ -12,5 +12,6 @@ public interface UserDao {
 	public BankUser addUser(String name, String email, boolean employee);
 	public BankAccount getAccount();
 	public List<Customer> getCustomers(int employeeId);
+	public void insertTransaction(String interaction);
 
 }

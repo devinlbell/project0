@@ -48,8 +48,15 @@ public class EmployeeService {
 	private void displayTransactions() {
 		// TODO display clean transactions
 		List<Transactions> allTransactions = aDao.viewTransactions();
-		for(Transactions t: allTransactions) {
-			System.out.println("[" + t.getId() + "] AccountID: " + t.getAccountId() + " Amount: $" + t.getAmount() + " Status: " + t.getStatus());
+		for(int i = 0; i < allTransactions.size(); i++) {
+			System.out.println("[" + i + "] Transaction: " + allTransactions.get(i).getInteraction());
+		}
+		System.out.println("Would you like to continue working? (y, n)");
+		String answer = scanner.next();
+		if(answer.toLowerCase().charAt(0) == 'y') {
+			begin();
+		} else {
+			System.out.println("Thank you for all your hard work with our bank. Have an amazing day!");
 		}
 	}
 

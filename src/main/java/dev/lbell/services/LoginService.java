@@ -34,7 +34,7 @@ public class LoginService {
 					System.out.println("Employee account found! Your id is " + user.getId());
 					return user;
 				} else {
-					System.out.println("We couldn't find your account. Sorry!");
+					System.out.println("We couldn't find your account. Sorry, please try again.");
 					return null;
 				}
 			} else { // get customer object
@@ -44,7 +44,7 @@ public class LoginService {
 					System.out.println("Thank you. We've found your account. You're representative is " + customer.getEmployeeId());
 					return customer;
 				} else {
-					System.out.println("We couldn't find your account. Sorry!");
+					System.out.println("We couldn't find your account. Sorry, please try again.");
 					return null;
 				}
 				

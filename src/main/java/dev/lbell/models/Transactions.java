@@ -3,15 +3,12 @@ package dev.lbell.models;
 import java.util.Date;
 
 public class Transactions {
-	private int id, accountId;
-	private double amount;
-	private String status;
+	private int id;
+	private String interaction;
 	
-	public Transactions(int id, int accountId, double amount, String status) {
+	public Transactions(int id, String interaction) {
 		this.id = id;
-		this.accountId = accountId;
-		this.amount = amount;
-		this.status = status;
+		this.interaction = interaction;
 	}
 	
 	public int getId() {
@@ -20,24 +17,15 @@ public class Transactions {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getAccountId() {
-		return accountId;
+
+	public String getInteraction() {
+		return interaction;
 	}
-	public void setAccountId(int accountId) {
-		this.accountId = accountId;
+
+	public void setInteraction(String interaction) {
+		this.interaction = interaction;
 	}
-	public double getAmount() {
-		return amount;
-	}
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
 	
 
 	

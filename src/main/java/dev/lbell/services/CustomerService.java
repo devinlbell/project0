@@ -127,46 +127,88 @@ public class CustomerService {
 	public boolean deposit(BankAccount account) {
 		System.out.println("How much money would you like to deposit?");
 		double amount = scanner.nextDouble();
-		if(amount > 0) {
-			account.setBalance(account.getBalance() + amount);
-			if(aDao.makeTransaction(account.getId(), amount, account.getBalance(), "APPROVED")) {
-				System.out.println("Congratulations! $" + amount + " has been deposited into your account");
-				return true;
-			} else {
-				System.out.println("Sorry we weren't able to make that deposit. Have a wonderful day!");
-				return false;
-			}
-			
+		if(aDao.makeTransaction(account.getId(), amount, account.getBalance(), true)) {
+			account.setBalance(amount + account.getBalance());
+			System.out.println("$" + amount + " has successfully been deposited into your account.");
+			return true;
 		} else {
-			System.out.println("Please enter an amount over $0");
-			aDao.makeTransaction(account.getId(), amount, account.getBalance(),"REJECTED");
-			return deposit(account);
+			System.out.println("Would you like to continue with making a deposit? (y, n)");
+			String answer = scanner.next();
+			if(answer.toLowerCase().charAt(0) == 'y') {
+				return withdraw(account);
+			} else {
+				System.out.println("Are you done working with your bank accounts?");
+				answer = scanner.next();
+				if(answer.toLowerCase().charAt(0) == 'y') {
+					System.out.println("Thank you for using our banking service. Have a nice day!");
+					return false;
+				} else {
+					return true;
+				}
+			}	
 		}
+//		if(amount > 0) {
+//			account.setBalance(account.getBalance() + amount);
+//			if(aDao.makeTransaction(account.getId(), amount, account.getBalance(), "APPROVED")) {
+//				System.out.println("Congratulations! $" + amount + " has been deposited into your account");
+//				return true;
+//			} else {
+//				System.out.println("Sorry we weren't able to make that deposit. Have a wonderful day!");
+//				return false;
+//			}
+//			
+//		} else {
+//			System.out.println("Please enter an amount over $0");
+//			aDao.makeTransaction(account.getId(), amount, account.getBalance(),"REJECTED");
+//			return deposit(account);
+//		}
 	}
 	public boolean withdraw(BankAccount account) {
 		System.out.println("How much money would you like to withdraw?");
 		double amount = scanner.nextDouble();
-		if(amount > 0) {
-			double newBalance = account.getBalance() - amount;
-			
-			if(newBalance < 0) {
-				System.out.println("Withdrawal unsuccessful. There isn't enough money in your account to withdraw that amount");
-				return aDao.makeTransaction(account.getId(), -amount, account.getBalance(), "REJECTED");
-			} else {
-				account.setBalance(newBalance);
-				if(aDao.makeTransaction(account.getId(), -amount, account.getBalance(), "APPROVED")) {
-					System.out.println("$" + amount + " has successfully been withdrawn from your account");
-					return true;
-				} else {
-					System.out.println("Sorry we weren't able to make that withdrawal. Have a wonderful day!");
-					return false;
-				}
-			}
+		if(aDao.makeTransaction(account.getId(), amount, account.getBalance(), false)) {
+			account.setBalance(account.getBalance() - amount);
+			System.out.println("$" + amount + " has successfully been withdrawn from your account");
+			return true;
 		} else {
-			System.out.println("Please enter an amount over $0");
-			aDao.makeTransaction(account.getId(), amount, account.getBalance(),"REJECTED");
-			return deposit(account);
+			System.out.println("Would you like to continue making a withdrawal? (y, n)");
+			String answer = scanner.next();
+			if(answer.toLowerCase().charAt(0) == 'y') {
+				return withdraw(account);
+			} else {
+				System.out.println("Are you done working with your bank accounts? (y, n)");
+				answer = scanner.next();
+				if(answer.toLowerCase().charAt(0) == 'y') {
+					System.out.println("Thank you for using our banking service. Have a nice day!");
+					return false;
+				} else {
+					return true;
+				}
+				
+			}
+			
 		}
+//		if(amount > 0) {
+//			double newBalance = account.getBalance() - amount;
+//			
+//			if(newBalance < 0) {
+//				System.out.println("Withdrawal unsuccessful. There isn't enough money in your account to withdraw that amount");
+//				return aDao.makeTransaction(account.getId(), -amount, account.getBalance(), "REJECTED");
+//			} else {
+//				account.setBalance(newBalance);
+//				if(aDao.makeTransaction(account.getId(), -amount, account.getBalance(), "APPROVED")) {
+//					System.out.println("$" + amount + " has successfully been withdrawn from your account");
+//					return true;
+//				} else {
+//					System.out.println("Sorry we weren't able to make that withdrawal. Have a wonderful day!");
+//					return false;
+//				}
+//			}
+//		} else {
+//			System.out.println("Please enter an amount over $0");
+//			aDao.makeTransaction(account.getId(), amount, account.getBalance(),"REJECTED");
+//			return withdraw(account);
+//		}
 		
 	}
 }
